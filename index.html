@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth Moon Parallax</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
+      integrity="sha512-26lCJWeu4qh1Kd3YpqH03s+Ju7qI9mqz48E8mPE/qIoucLUbkBx6oayTM+0T3mAdC1DdT1grtnFtJNwsB+8qzw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+      integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
+      integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      @font-face {
+        font-family: 'mona-sans-extraboldnarrow';
+        src: url('./fonts/Mona-Sans-ExtraBoldNarrow.woff2');
+      }
+      @font-face {
+        font-family: 'mona-sans-semibold';
+        src: url('./fonts/Mona-Sans-SemiBold.woff2');
+      }
+      .scrolldist,
+      .main {
+        position: absolute;
+      }
+      .headline1,
+      .headline2 {
+        font-family: 'mona-sans-extraboldnarrow';
+        font-size: min(100vw, 160px);
+      }
+      .subheadline {
+        font-family: 'mona-sans-semibold';
+        font-size: min(50vw, 60px);
+      }
+      .main {
+        /* position: absolute; */
+        width: 100%;
+        height: 100%;
+      }
+      .clouds {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scrolldist"></div>
+    <div class="main">
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <mask id="m">
+          <g class="cloudmask">
+            <image xlink:href="/img/cloud-mask.webp" width="1920" height="1660" />
+          </g>
+        </mask>
+        <image class="space" xlink:href="/img/space.webp" width="1920" height="800" />
+        <image class="moon" x="75%" y="300px" xlink:href="/img/moon.webp" width="300" height="300" />
+        <text class="headline1" fill="#fff" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
+        <image class="earth" x="0" y="700px" xlink:href="/img/earth.webp" width="1920" height="1147" />
+        <g mask="url(#m)">
+          <rect fill="#fff" width="100%" height="100%" />
+          <text class="headline1" fill="#458ad1" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
+          <text class="headline2" fill="#0C1232" x="50%" y="500px" text-anchor="middle">MARKETING AUTOMATION</text>
+          <text class="subheadline" fill="#0C1232" x="50%" y="580px" text-anchor="middle">
+            Accelerate growth with thoughtfully
+          </text>
+          <text class="subheadline" fill="#0C1232" x="50%" y="640px" text-anchor="middle">
+            orchestrated and executed programming
+          </text>
+        </g>
+      </svg>
+    </div>
+    <!-- <section>
+      <div>
+        <h2>Website continues</h2>
+      </div>
+    </section> -->
+    <script>
+      gsap.set('.main', {
+        position: 'fixed',
+        background: '#fff',
+        width: '100%',
+        // maxWidth: '1920px',
+        height: '100%',
+        top: 0,
+        left: '50%',
+        x: '-50%',
+      });
+      gsap.set('.scrolldist', { width: '100%', height: '200%' });
+      gsap
+        .timeline({ scrollTrigger: { trigger: '.scrolldist', start: 'top top', end: 'bottom bottom', scrub: 1 } })
+        .fromTo('.space', { y: 0 }, { y: -150 }, 0)
+        .fromTo('.moon', { y: 100 }, { y: -200 }, 0)
+        .fromTo('.cloudmask', { y: 1200 }, { y: -500 }, 0)
+        .fromTo('.earth', { y: -100 }, { y: -800 }, 0);
+    </script>
+    <script id="__bs_script__">
+      //<![CDATA[
+      document.write(
+        "<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.10'><\/script>".replace(
+          'HOST',
+          location.hostname
+        )
+      );
+      //]]>
+    </script>
+  </body>
+</html>
