@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Earth Moon Parallax</title>
+    <title>Earth Moon Parallax | CSS</title>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/reseter.css/2.0.0/minireseter.min.css"
@@ -12,6 +14,49 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="heroMenu">
+          <div class="logoWrap" id="home">
+            <svg class="logo" width="152" height="102" viewBox="0 0 152 102" xmlns="http://www.w3.org/2000/svg">
+              <path
+                class="centerShape"
+                d="M76,7.71C61.06,16.35,51,32.5,51,51c0,18.5,10.06,34.65,25,43.29C90.94,85.65,101,69.5,101,51
+    	C101,32.5,90.94,16.35,76,7.71z"
+              />
+              <circle class="stroke" cx="51" cy="51" r="50" />
+              <circle class="stroke" cx="101" cy="51" r="50" />
+            </svg>
+            <p role="doc-subtitle" class="name">Lunary</p>
+          </div>
+          <div class="menuWrap">
+            <nav class="menu">
+              <a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a
+              ><a href="#">Blog</a>
+            </nav>
+          </div>
+          div
+        </div>
+      </header>
+      <div class="hero">
+        <div class="heroText">
+          <h2 class="mondoHeadline1">Genuinely Insightful</h2>
+          <div id="earth"></div>
+          <div class="cloudMask">
+            <h1 class="mondoHeadline2">Marketing Automation</h1>
+            <h3 class="subheadline">Accelerate growth with thoughtfully orchestrated and executed programming</h3>
+          </div>
+        </div>
+      </div>
+      <div id="moon"></div>
+      <div id="space"></div>
+    </div>
+    <main>
+      <p>Website here...</p>
+    </main>
+    <footer>footer</footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
       integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
@@ -24,86 +69,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <style>
-      @font-face {
-        font-family: 'mona-ebn';
-        src: url('./fonts/Mona-Sans-ExtraBoldNarrow.woff2');
-      }
-      @font-face {
-        font-family: 'mona-sb';
-        src: url('./fonts/Mona-Sans-SemiBold.woff2');
-      }
-      @font-face {
-        font-family: 'mona';
-        src: url('./fonts/Mona-Sans-Regular.woff2');
-      }
-      body {
-        font-family: 'mona';
-      }
-      .mondoHeadline1,
-      .mondoHeadline2 {
-        font-family: 'mona-ebn';
-        font-size: min(100vw, 160px);
-        line-height: 1;
-      }
-      .subheadline {
-        font-family: 'mona-sb';
-        font-size: min(50vw, 60px);
-        line-height: 1.25;
-      }
-    </style>
-  </head>
-  <body>
-<header></header>
-
-    <div class="main">
-      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
-        <mask id="m">
-          <g class="cloudmask">
-            <image xlink:href="/img/cloud-mask.webp" width="1920" height="1660" />
-          </g>
-        </mask>
-        <image class="space" xlink:href="/img/space.webp" width="1920" height="800" />
-        <image class="moon" x="75%" y="300px" xlink:href="/img/moon.webp" width="300" height="300" />
-        <text class="headline1" fill="#fff" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
-        <image class="earth" x="0" y="700px" xlink:href="/img/earth.webp" width="1920" height="1147" />
-        <g mask="url(#m)">
-          <rect fill="#fff" width="100%" height="100%" />
-          <text class="headline1" fill="#458ad1" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
-          <text class="headline2" fill="#0C1232" x="50%" y="500px" text-anchor="middle">MARKETING AUTOMATION</text>
-          <text class="subheadline" fill="#0C1232" x="50%" y="580px" text-anchor="middle">
-            Accelerate growth with thoughtfully
-          </text>
-          <text class="subheadline" fill="#0C1232" x="50%" y="640px" text-anchor="middle">
-            orchestrated and executed programming
-          </text>
-        </g>
-      </svg>
-    </div>
-    <!-- <section>
-      <div>
-        <h2>Website continues</h2>
-      </div>
-    </section> -->
-    <!-- <script>
-      gsap.set('.main', {
-        position: 'fixed',
-        background: '#fff',
-        width: '100%',
-        maxWidth: '1920px',
-        height: '100%',
-        top: 0,
-        left: '50%',
-        x: '-50%',
-      });
-      gsap.set('.scrolldist', { width: '100%', height: '200%' });
-      gsap
-        .timeline({ scrollTrigger: { trigger: '.scrolldist', start: 'top top', end: 'bottom bottom', scrub: 1 } })
-        .fromTo('.space', { y: 0 }, { y: -150 }, 0)
-        .fromTo('.moon', { y: 100 }, { y: -200 }, 0)
-        .fromTo('.cloudmask', { y: 1200 }, { y: -500 }, 0)
-        .fromTo('.earth', { y: -100 }, { y: -800 }, 0);
-    </script> -->
+    <script src="app.js" />
     <script id="__bs_script__">
       //<![CDATA[
       document.write(
