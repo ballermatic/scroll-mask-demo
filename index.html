@@ -48,12 +48,18 @@
         font-size: min(50vw, 60px);
       }
       .main {
-        /* position: absolute; */
         width: 100%;
         height: 100%;
       }
       .clouds {
         opacity: 0.7;
+      }
+      .space {
+        /* position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%; */
       }
     </style>
   </head>
@@ -66,34 +72,24 @@
             <image xlink:href="img/cloud-mask.webp" width="1920" height="1660" />
           </g>
         </mask>
-        <image class="space" xlink:href="img/space.webp" width="1920" height="800" />
+        <image class="space" x="0" y="0" xlink:href="img/space.webp" width="1920" height="800" />
         <image class="moon" x="75%" y="300px" xlink:href="img/moon.webp" width="300" height="300" />
-        <text class="headline1" fill="#fff" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
-        <image class="earth" x="0" y="700px" xlink:href="img/earth.webp" width="1920" height="1147" />
+        <text class="headline1" fill="#fff" x="50%" y="360px" text-anchor="middle">PRETTY PICTURES</text>
+        <image class="earth" x="0" y="700" xlink:href="img/earth.webp" width="1920" height="1147" />
         <g mask="url(#m)">
           <rect fill="#fff" width="100%" height="100%" />
-          <text class="headline1" fill="#458ad1" x="50%" y="360px" text-anchor="middle">GENUINELY INSIGHTFUL</text>
-          <text class="headline2" fill="#0C1232" x="50%" y="500px" text-anchor="middle">MARKETING AUTOMATION</text>
-          <text class="subheadline" fill="#0C1232" x="50%" y="580px" text-anchor="middle">
-            Accelerate growth with thoughtfully
-          </text>
-          <text class="subheadline" fill="#0C1232" x="50%" y="640px" text-anchor="middle">
-            orchestrated and executed programming
-          </text>
+          <text class="headline1" fill="#458ad1" x="50%" y="360px" text-anchor="middle">PRETTY PICTURES</text>
+          <text class="headline2" fill="#0C1232" x="50%" y="500px" text-anchor="middle">FROM NASA WITH LOVE</text>
+          <text class="subheadline" fill="#0C1232" x="50%" y="580px" text-anchor="middle">Lorem ipsum dolor</text>
+          <text class="subheadline" fill="#0C1232" x="50%" y="640px" text-anchor="middle">sit amet consectetur!</text>
         </g>
       </svg>
     </div>
-    <!-- <section>
-      <div>
-        <h2>Website continues</h2>
-      </div>
-    </section> -->
     <script>
       gsap.set('.main', {
         position: 'fixed',
         background: '#fff',
         width: '100%',
-        // maxWidth: '1920px',
         height: '100%',
         top: 0,
         left: '50%',
